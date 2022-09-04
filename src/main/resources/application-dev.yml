@@ -1,0 +1,21 @@
+server:
+  port: 9090
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  cloud:
+    gateway:
+      enabled: true
+      routes:
+        - id: USERS
+          uri: lb://USERS
+          predicates:
+            - Path=/api/users/**
+        - id: USERS-ENTITLEMENT
+          uri: lb://USERS-ENTITLEMENT
+          predicates:
+            - Path=/api/entitlement/**

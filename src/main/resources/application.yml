@@ -1,0 +1,16 @@
+
+spring:
+  profiles:
+    default: dev
+    active: dev
+  output:
+    ansi:
+      enabled: ALWAYS
+  application:
+    name: MS_GATEWAY
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: true
