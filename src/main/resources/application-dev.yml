@@ -1,20 +1,20 @@
 server:
+  ## Declare the port for the Gateway
   port: 9090
-
-management:
-  endpoint:
-    health:
-      show-details: ALWAYS
 
 spring:
   cloud:
+    ## Enable the gateway
     gateway:
       enabled: true
+      ## Declare the routes
       routes:
+        ## Users MicroServices routes
         - id: USERS
           uri: lb://USERS
           predicates:
             - Path=/api/users/**
+        ## Users-Entitlement Microservices routes
         - id: USERS-ENTITLEMENT
           uri: lb://USERS-ENTITLEMENT
           predicates:
