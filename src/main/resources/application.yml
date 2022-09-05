@@ -1,15 +1,15 @@
 
 spring:
+  ## Declaring the default and active profiles
   profiles:
     default: dev
     active: dev
-  output:
-    ansi:
-      enabled: ALWAYS
+  ## Declare the Application name
   application:
     name: MS_GATEWAY
 
 eureka:
+  ## Register as a client to the Eureka server
   client:
     fetch-registry: true
     register-with-eureka: true
