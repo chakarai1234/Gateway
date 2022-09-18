@@ -11,11 +11,21 @@ spring:
       routes:
         ## Users MicroServices routes
         - id: USERS
-          uri: lb://USERS
+          uri: lb://MS-USERS
           predicates:
             - Path=/api/users/**
         ## Users-Entitlement Microservices routes
         - id: USERS-ENTITLEMENT
-          uri: lb://USERS-ENTITLEMENT
+          uri: lb://MS-USERS-ENTITLEMENT
           predicates:
             - Path=/api/entitlement/**
+  output:
+    ansi:
+      enabled: ALWAYS
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
