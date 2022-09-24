@@ -1,4 +1,6 @@
-
+server:
+  ## Declare the port for the Gateway
+  port: 9090
 spring:
   ## Declaring the default and active profiles
   profiles:
@@ -7,13 +9,9 @@ spring:
   ## Declare the Application name
   application:
     name: ms-gateway
-
-eureka:
-  ## Register as a client to the Eureka server
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    enabled: true
+  output:
+    ansi:
+      enabled: ALWAYS
 
 application:
   version: @project.version@
